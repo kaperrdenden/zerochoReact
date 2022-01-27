@@ -18,6 +18,7 @@
           this.state = {
             first: Math.ceil(Math.random() * 9),
             second: Math.ceil(Math.random() * 9),
+            total: null,
             value: "",
             result: "",
           };
@@ -32,10 +33,12 @@
               result: "정답",
               first: Math.ceil(Math.random() * 9),
               second: Math.ceil(Math.random() * 9),
+              total: this.state.value,
               value: "",
             });
           } else {
             this.setState({
+              total: this.state.value,
               result: "떙",
               value: "",
             });
@@ -56,7 +59,10 @@
                 />
                 <button>입력</button>
               </form>
-              <div>{this.state.result}</div>
+              <div>
+                <span>{this.state.total}</span>
+                {this.state.result}
+              </div>
             </div>
           );
         }
