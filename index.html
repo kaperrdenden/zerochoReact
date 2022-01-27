@@ -12,71 +12,47 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      class GuGuDan extends React.Component {
-        constructor(props) {
-          super(props);
-          this.state = {
-            first: Math.ceil(Math.random() * 9),
-            second: Math.ceil(Math.random() * 9),
-            total: null,
-            value: "",
-            result: "",
-          };
-        }
-        onSubmit = (e) => {
+      const GuGuDan = () => {
+        const [first, setFirst] = React.useState(Math.ceil(Math.random() * 9));
+        const [second, setSecond] = React.useState(
+          Math.ceil(Math.random() * 9)
+        );
+        const [value, setValue] = React.useState("");
+        const [result, setResult] = React.useState("");
+        const inputRef = React.useRef(null);
+
+        const onChangeInput = (e) => {
+          setValue(e.target.value);
+        };
+
+        const onSubmitForm = (e) => {
           e.preventDefault();
-          if (
-            parseInt(this.state.value) ===
-            this.state.first * this.state.second
-          ) {
-            this.setState((prevState) => {
-              // setState의 안에 return이 존재하는 함수를 넣어줄 수도 있다.
-              // 매개변수로 prevState 바뀌기 전의 state를 가져올 수 있다
-              // 그 가져온 값을 다음 state변화에 활용할 수 있게 된다.
-              return {
-                result: "정답: " + prevState.value,
-                first: Math.ceil(Math.random() * 9),
-                second: Math.ceil(Math.random() * 9),
-                total: this.state.value,
-                value: "",
-              };
-            });
-            this.input.focus();
+          if (parseInt(value) === first * second) {
+            setResult("정답: " + value);
+            setFirst(Math.ceil(Math.random() * 9));
+            setSecond(Math.ceil(Math.random() * 9));
+            setValue("");
+            inputRef.current.focus();
           } else {
-            this.setState({
-              total: this.state.value,
-              result: "떙",
-              value: "",
-            });
-            this.input.focus();
+            setResult("떙");
+            setValue("");
+            inputRef.current.focus();
           }
         };
-        onChange = (e) => {
-          this.setState({ value: e.target.value });
-        };
-        input;
-
-        render() {
-          console.log("렌더링");
-          return (
-            <React.Fragment>
-              {this.state.first} X {this.state.second} = ?
-              <form onSubmit={this.onSubmit}>
-                <input
-                  type="number"
-                  value={this.state.value}
-                  onChange={this.onChange}
-                  ref={(c) => {
-                    this.input = c;
-                  }}
-                />
-                <button>입력</button>
-              </form>
-              <div>{this.state.result}</div>
-            </React.Fragment>
-          );
-        }
-      }
+        return (
+          <React.Fragment>
+            <div>
+              {" "}
+              {first} {second}{" "}
+            </div>
+            <form onSubmit={onSubmitForm}>
+              <input ref={inputRef} value={value} onChange={onChangeInput} />
+              <button>입력</button>
+            </form>
+            <div id="result">{result}</div>
+          </React.Fragment>
+        );
+      };
     </script>
     <script type="text/babel">
       ReactDOM.render(<GuGuDan />, document.querySelector("#root"));
