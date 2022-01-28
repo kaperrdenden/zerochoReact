@@ -1,0 +1,27 @@
+{
+  "name": "react-lecture",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000z\u0000e\u0000r\u0000o\u0000c\u0000h\u0000o\u0000R\u0000e\u0000a\u0000c\u0000t\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaperrdenden/zerochoReact.git"
+  },
+  "author": "kaperrdenden",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaperrdenden/zerochoReact/issues"
+  },
+  "homepage": "https://github.com/kaperrdenden/zerochoReact#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
