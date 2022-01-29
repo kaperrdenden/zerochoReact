@@ -2,9 +2,11 @@
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+    // 실제서비스에서 쓰이는 것들
   },
   "devDependencies": {
     "webpack": "^5.67.0",
     "webpack-cli": "^4.9.2"
+        //개발단계에서만 쓰이는 것들
   }
 }
