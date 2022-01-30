@@ -1,4 +1,5 @@
 const path = require('path');
+const { webpack } = require('webpack');
 
 module.exports ={
     mode: 'development',
@@ -6,6 +7,9 @@ module.exports ={
     resolve:{
         extensions: ['.jsx', '.js'],
     },
+    //  이 위의 세개는 웹팩에 대한 도움정도.
+    // entry , module, output이 메인 
+    // 여기서 더 알아둘게 plugins. 이 플러그인은 바벨의 plugins가 아님
     entry:{
         app: './client',
     },
@@ -29,6 +33,9 @@ module.exports ={
             }
         }],
     },
+    plugins: [
+        // new webpack.LoaderOptionsPlugin({debug: true}),
+    ],
     output:{
         filename: 'app.js',
         path: path.join(__dirname, 'dist'),
