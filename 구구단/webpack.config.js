@@ -14,7 +14,15 @@ module.exports ={
             test: /\.jsx?$/,
             loader: 'babel-loader',
             options: {
-                presets:['@babel/preset-env','@babel/preset-react'],
+                presets:[
+                    ['@babel/preset-env',{
+                        targets:{
+                            browsers:['last 2 chrome versions'],
+                        },
+                        // preset env가 자동으로 옛 브라우저들을 지원해주는데
+                        //좀더 구체적으로 써줄 수가 있다.
+                    }],
+                    '@babel/preset-react'],
                 plugins: [],
             }
         }],
