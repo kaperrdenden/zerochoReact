@@ -32,7 +32,7 @@ const GuGuDan = () => {
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
-        <button>입력!</button>
+        <button>입력!asdasd</button>
       </form>
       <div id="result">{result}</div>
     </>
