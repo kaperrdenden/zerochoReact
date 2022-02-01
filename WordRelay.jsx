@@ -40,7 +40,7 @@ const WordRelay =  ()=> {
                      value={value}
                      onChange={onChangeInput}
                       />
-                      <label htmlFor="wordInput">글자를 입력하세요</label>
+                      <label htmlFor="wordInput">글자를 입력하세요!</label>
                       <button id='wordInput' className='wordInput'> 입력</button>
                       <div>{result}</div>
                 </form>
