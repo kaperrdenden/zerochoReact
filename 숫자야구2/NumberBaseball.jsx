@@ -32,9 +32,9 @@ class NumberBaseball extends React.Component{
                </form>
                <div>시도:{this.state.tries}</div>
                <ul>
-                {['사과','바나나','복숭아','감','밤'].map((v) => {
+                {['사과','바나나','복숭아','감','밤'].map((v,i) => {
                     return(
-                        <li>{v}</li>
+                        <li key={i}>{v}</li>
                     )
                 })}  
                </ul>
