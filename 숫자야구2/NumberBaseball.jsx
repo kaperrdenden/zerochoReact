@@ -32,7 +32,7 @@ class NumberBaseball extends React.Component{
                </form>
                <div>시도:{this.state.tries}</div>
                <ul>
-                {['사과','바나나','복숭아'].map((v) => {
+                {['사과','바나나','복숭아','감','밤'].map((v) => {
                     return(
                         <li>{v}</li>
                     )
