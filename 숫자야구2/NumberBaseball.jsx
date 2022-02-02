@@ -18,6 +18,9 @@ class NumberBaseball extends React.Component{
     onChangeInput = () => {
 
     }
+    fruits = [
+        {fruit:'사과', taste:'맛없다'}
+    ]
     render(){
        return(
            <>
@@ -32,9 +35,9 @@ class NumberBaseball extends React.Component{
                </form>
                <div>시도:{this.state.tries}</div>
                <ul>
-                {['사과','바나나','복숭아','감','밤'].map((v,i) => {
+                {this.fruits.map((v,i) => {
                     return(
-                        <li key={i}>{v}</li>
+                        <li key={i}>{v.fruit} - {v.taste}</li>
                     )
                 })}  
                </ul>
