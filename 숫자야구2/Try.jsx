@@ -1,19 +1,19 @@
 const React = require('react');
 const {Component} = React;
 
-
 class Try extends Component{
 
 
     render(){
 
         return(
-            <>
-                {console.log('here', this.props.tryInfo)}
+           
+               
                 <li>
+                     {console.log('hsdasdasdasdsere', this.props.tryInfo)}
                     {this.props.tryInfo.try} - {this.props.tryInfo.result}   
                 </li>
-            </>
+            
         )
     }
 };
