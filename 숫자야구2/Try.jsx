@@ -9,9 +9,11 @@ class Try extends React.Component{
     render() {
        return(
            <>
-                <li>sadasdasdasdasdasdasdasdasdas</li>
-                {/* {console.log('hsdasdasdasdsere', this.props.tryInfo)} */}
-                {/* {this.props.tryInfo.try} - {this.props.tryInfo.result}    */}
+                <li> 
+                 {this.props.tryInfo.try} - {this.props.tryInfo.result} 
+                 
+                   </li>
+               
            </>
        );
         

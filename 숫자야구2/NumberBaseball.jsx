@@ -100,8 +100,8 @@ class NumberBaseball extends React.Component{
                    {this.state.tries.map((v, i) => {
                        console.log(v)
                        return(
-                            
-                           <Try />
+                        
+                           <Try  key={i} tryInfo={v} index={i} />
                            )
                        
                        
