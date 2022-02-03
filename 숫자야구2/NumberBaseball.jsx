@@ -75,7 +75,7 @@ class NumberBaseball extends React.Component{
     } 
     
     onChangeInput = (e) => {
-        console.log(this.state.answer);
+        // console.log(this.state.answer);
         this.setState({
             value: e.target.value,
         });
@@ -98,8 +98,13 @@ class NumberBaseball extends React.Component{
                <div>시도:{this.state.tries.length}</div>
                <ul>
                    {this.state.tries.map((v, i) => {
-                       console.log(v);
-                       <Try tryInfo={v} />
+                       console.log(v)
+                       return(
+                            
+                           <Try />
+                           )
+                       
+                       
                    })}
                </ul>
             
