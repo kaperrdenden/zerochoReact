@@ -26,6 +26,7 @@ class NumberBaseball extends React.Component{
             alert("4자리 수 입력");
             this.setState({
                 value:'',
+                
             })
             return;
         }
