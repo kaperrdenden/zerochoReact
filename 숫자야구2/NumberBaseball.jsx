@@ -21,6 +21,14 @@ class NumberBaseball extends React.Component{
     }
     onSubmitForm = (e) => {
         e.preventDefault();  
+        console.log(this.state.value.length);
+        if(this.state.value.length < 4){
+            alert("4자리 수 입력");
+            this.setState({
+                value:'',
+            })
+            return;
+        }
         if(this.state.value === this.state.answer.join('')){
                 this.setState({
                     result:'홈런',
