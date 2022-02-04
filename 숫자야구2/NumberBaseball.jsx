@@ -4,6 +4,7 @@ const {Component} = React;
 const Try = require('./Try.jsx');
 
 function getNumbers() {
+//     깃헙에서 수
     const candidate = [1,2,3,4,5,6,7,8,9];
     const array = [];
     for (let i = 0; i < 4; i+=1){
