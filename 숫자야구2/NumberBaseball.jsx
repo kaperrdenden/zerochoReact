@@ -26,7 +26,7 @@ class NumberBaseball extends React.Component{
             alert("4자리 수 입력");
             this.setState({
                 value:'',
-                
+
             })
             return;
         }
@@ -36,7 +36,7 @@ class NumberBaseball extends React.Component{
                     tries: [...this.state.tries, {try: this.state.value, result:'홈런!'}],
 
                 });
-                alert('게임을 다시 싲가합니다');
+                alert('게임을 다시 시작합니다');
                 this.setState({
                     value:'',
                     answer:getNumbers(),
@@ -52,7 +52,7 @@ class NumberBaseball extends React.Component{
                 this.setState({
                     result:`10번 넘게 틀려서 실패 답은 ${answer.join('')} `, 
                 });
-                alert('게임을 다시 싲가합니다');
+                alert('게임을 다시 시작합니다');
                 this.setState({
                     value:'',
                     answer:getNumbers(),
