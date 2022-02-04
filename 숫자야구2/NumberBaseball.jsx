@@ -60,10 +60,9 @@ class NumberBaseball extends React.Component{
 
                 });
             }
-            else {//
-
-                for( let i = 0; i < 4; i += 1){//
-                    if(answerArray[i] === this.state.answer[i]){ //
+            else {
+                for( let i = 0; i < 4; i += 1){
+                    if(answerArray[i] === this.state.answer[i]){ 
                         strike += 1;
                     } else if( this.state.answer.includes(answerArray[i])){
                         ball += 1;
@@ -84,7 +83,6 @@ class NumberBaseball extends React.Component{
     } 
     
     onChangeInput = (e) => {
-        // console.log(this.state.answer);
         this.setState({
             value: e.target.value,
         });
