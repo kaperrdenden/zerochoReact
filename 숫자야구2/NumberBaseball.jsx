@@ -90,21 +90,22 @@ class NumberBaseball extends React.Component{
     }
  
     render() {
+        const {result, value, tries} = this.state;
        return(
            <>
-             <h1>{this.state.result}s</h1>
+             <h1>{result}s</h1>
                <form onSubmit={this.onSubmitForm}>
                    <input 
                         maxLength={4}
-                        value={this.state.value}
+                        value={value}
                         onChange={this.onChangeInput}
-                        value={this.state.value}
+                        value={value}
 
                    />
                </form>
-               <div>시도:{this.state.tries.length}</div>
+               <div>시도:{tries.length}</div>
                <ul>
-                   {this.state.tries.map((v, i) => {
+                   {tries.map((v, i) => {
                        console.log(v)
                        return(
                         
