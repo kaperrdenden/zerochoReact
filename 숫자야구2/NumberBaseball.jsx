@@ -13,6 +13,36 @@ function getNumbers() {
     }
     return array;
 }
+const NumberBaseball = () => {
+    return(
+        <>
+        <h1>{result}s</h1>
+          <form onSubmit={this.onSubmitForm}>
+              <input 
+                   maxLength={4}
+                   value={value}
+                   onChange={this.onChangeInput}
+                   value={value}
+
+              />
+          </form>
+          <div>시도:{tries.length}</div>
+          <ul>
+              {tries.map((v, i) => {
+                  console.log(v)
+                  return(
+                   
+                      <Try  key={i} tryInfo={v} index={i} />
+                      )
+                  
+                  
+              })}
+          </ul>
+       
+      </>
+    )
+}
+
 class NumberBaseball extends React.Component{
     state = {
         result: '',
@@ -32,10 +62,12 @@ class NumberBaseball extends React.Component{
             return;
         }
         if(this.state.value === this.state.answer.join('')){
-                this.setState({
-                    result:'홈런',
-                    tries: [...this.state.tries, {try: this.state.value, result:'홈런!'}],
-
+                this.setState((prevState) => { 
+                    return  {
+                        result:'홈런',
+                        tries: [...prevState.tries, {try: prevState.value, result:'홈런!'}],
+    
+                    }
                 });
                 alert('게임을 다시 시작합니다');
                 this.setState({
@@ -69,9 +101,12 @@ class NumberBaseball extends React.Component{
                         ball += 1;
                     }
                 }
-            this.setState({
-                tries:[...this.state.tries, {try: this.state.value, result: `${strike} 스트라이크 ${ball}볼입니다`}],
-                value:'',
+            this.setState((prevState) => {
+                return{
+                    tries:[...tprevState.tries, {try: prevState.value, result: `${strike} 스트라이크 ${ball}볼입니다`}],
+                    value:'',
+                }
+              
             });
 
             
