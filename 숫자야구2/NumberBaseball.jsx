@@ -1,5 +1,5 @@
 const React = require('react');
-const {Component} = React;
+const {Component, useState} = React;
 // import Try from './Try';
 const Try = require('./Try.jsx');
 
@@ -14,6 +14,10 @@ function getNumbers() {
     return array;
 }
 const NumberBaseball = () => {
+    const [result, setResult] = useState('');
+    const [value, setValue] = useState('');
+    const [answer, setAnswer] = useState(getNumbers());
+    const [tries, setTries] = useState([]);
     return(
         <>
         <h1>{result}s</h1>
