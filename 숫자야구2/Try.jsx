@@ -1,8 +1,24 @@
 const React = require('react');
-const {Component} = React;
+const {PureComponent, memo} = React;
 
+// class Try extends PureComponent{
 
-const Try = ({tryInfo}) => {
+//     render(){
+        
+//         const {tryInfo} = this.props;
+//         return(
+//             <>
+//             <li> 
+//              {tryInfo.try} - {tryInfo.result} 
+             
+//                </li>
+           
+//        </>
+//         );
+//     }
+// }
+
+const Try = memo(({tryInfo}) => {
     return(
         <>
         <li> 
@@ -12,7 +28,7 @@ const Try = ({tryInfo}) => {
        
    </>
     )
-}
+});
 
 
 module.exports = Try;
