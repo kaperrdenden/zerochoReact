@@ -1,5 +1,5 @@
 const React = require('react');
-const {Component, useState} = React;
+const {Component, useState, useRef} = React;
 // import Try from './Try';
 const Try = require('./Try.jsx');
 
@@ -18,13 +18,14 @@ const NumberBaseball = () => {
     const [value, setValue] = useState('');
     const [answer, setAnswer] = useState(getNumbers());
     const [tries, setTries] = useState([]);
+    const inputEl = useRef('');
     const onSubmitForm = (e) => {
         e.preventDefault();  
         console.log(value.length);
         if(value.length < 4){
             alert("4자리 수 입력");
             setValue('');
-         
+            inputEl.current.focus();
             return;
         }
         if(value === answer.join('')){
@@ -37,7 +38,7 @@ const NumberBaseball = () => {
                 setValue('');
                 setAnswer(getNumbers());
                 setTries([]);
-
+                inputEl.current.focus();
            
         }
         else{
@@ -51,7 +52,7 @@ const NumberBaseball = () => {
                 setValue('');
                 setAnswer(getNumbers());
                 setTries([]);
-                
+                inputEl.current.focus();
             }
             else {
                 for( let i = 0; i < 4; i += 1){
@@ -65,7 +66,7 @@ const NumberBaseball = () => {
             setValue('');
        
 
-            
+            inputEl.current.focus();
         }
         }
         console.log(tries);
@@ -85,6 +86,7 @@ const NumberBaseball = () => {
                    value={value}
                    onChange={onChangeInput}
                    value={value}
+                    ref={inputEl}
               />
           </form>
           <div>시도:{tries.length}</div>
