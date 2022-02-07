@@ -1,4 +1,5 @@
 const React = require('react');
+const { useState } = require('react/cjs/react.development');
 const {PureComponent, memo} = React;
 
 // class Try extends PureComponent{
@@ -19,10 +20,17 @@ const {PureComponent, memo} = React;
 // }
 
 const Try = memo(({tryInfo}) => {
+    const {result, setResult} = useState(tryInfo.result);
+
+    const onClick = () => {
+        setResult('1');
+    };
     return(
         <>
         <li> 
-         {tryInfo.try} - {tryInfo.result} 
+            {tryInfo.try} 
+            <div onClick={onClick}> {result} </div>
+        -
          
            </li>
        
