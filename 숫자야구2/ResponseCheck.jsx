@@ -11,21 +11,22 @@ class ResponseCheck extends Component {
 
     }
     renderAverage = () => {
-        
-        this.state.result.length === 0 
+        const { result } = this.state;
+        result.length === 0 
         ? null 
-        :  <div>평균시간: {this.state.result.reduce((a,c) => a + c / this.state.result.length)} ms
+        :  <div>평균시간: {result.reduce((a,c) => a + c / result.length)} ms
         </div>
     }
     render() {
+        const { state, message } = this.state;
         return(
             <>
                 <div
                     id="screen"
-                    className={this.state.state}
+                    className={state}
                     onClick={this.onClickScreen}
                 >
-                    {this.state.message}
+                    {message}
                 </div>
                 {
                     this.renderAverage()
