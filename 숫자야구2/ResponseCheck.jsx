@@ -59,6 +59,7 @@ const ResponseCheck = () => {
                 >
                     {message}
                 </div>
+                {}
                 {
                     renderAverage()
                 }

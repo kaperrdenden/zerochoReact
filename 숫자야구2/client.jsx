@@ -1,6 +1,6 @@
 const React = require('react');
 const ReactDom = require('react-dom');
 
-const ResponseCheck = require('./ResponseCheck.jsx');
+const RSP = require('./RSP.jsx');
 
-ReactDom.render(<ResponseCheck/>,document.querySelector('#root'));
+ReactDom.render(<RSP/>,document.querySelector('#root'));
