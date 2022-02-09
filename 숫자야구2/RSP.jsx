@@ -24,7 +24,7 @@ const RSP = () => {
     const [score, setScore] = useState(0);
     const interval = useRef();
     
-    useEffect(() => { //d
+    useEffect(() => { 
         interval.current = setInterval(changeHand,100);
         return () => {
             clearInterval(interval.current);
