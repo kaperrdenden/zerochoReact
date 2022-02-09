@@ -24,30 +24,33 @@ class RSP extends Component{
     }
     interval;
     componentDidMount(){ // 비동기 요청을 많이한다
-        this.interval = setInterval(()=>{
-            const {imgCoord} = this.state;
-            console.log(imgCoord,rspCoords.바위);
-            if (imgCoord == rspCoords.바위){
-                console.log('here');
-               this.setState({
-                imgCoord: rspCoords.가위,
-               }) 
-            } else if (imgCoord == rspCoords.가위){
-                this.setState({
-                    imgCoord: rspCoords.보,
-                   }) 
-            }else if (imgCoord == rspCoords.보){
-                this.setState({
-                    imgCoord: rspCoords.바위,
-                   }) 
-            }
-        },1000)
+        this.interval = setInterval(this.changeHand,1000)
     }
     componentDidUpdate(){}
     componentWillUnmount(){
         clearInterval(this.interval)
 
     }// 비동기요청 정리를 많이한다.
+    
+    changeHand = ()=>{
+        const {imgCoord} = this.state;
+        console.log(imgCoord,rspCoords.바위);
+        if (imgCoord == rspCoords.바위){
+            console.log('here');
+           this.setState({
+            imgCoord: rspCoords.가위,
+           }) 
+        } else if (imgCoord == rspCoords.가위){
+            this.setState({
+                imgCoord: rspCoords.보,
+               }) 
+        }else if (imgCoord == rspCoords.보){
+            this.setState({
+                imgCoord: rspCoords.바위,
+               }) 
+        }
+    }
+
     onClickBtn = (choice) => {
         const {imgCoord} = this.state;
         clearInterval(this.interval);
@@ -77,6 +80,7 @@ class RSP extends Component{
                 };
             });
         }
+        this.interval = setInterval(this.changeHand,1000)
     }
     render(){
         const {result, score, imgCoord} =this.state;
